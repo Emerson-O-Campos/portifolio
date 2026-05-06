@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emerson Campos | Portfólio Profissional</title>
+  
+  <meta name="description" content="Portfólio de Emerson Campos - Desenvolvedor Front-End especializado em interfaces modernas, responsivas e com alta performance." />
+  <meta name="author" content="Emerson Campos" />
+  <meta name="theme-color" content="#00ff99" />
+  
+  <meta property="og:title" content="Emerson Campos | Portfólio" />
+  <meta property="og:description" content="Desenvolvedor Front-End | HTML, CSS, JavaScript" />
+  <meta property="og:type" content="website" />
+  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <!-- Fontes modernas -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Cursor custom -->
+  <div class="cursor"></div>
+
+  <!-- Botão WhatsApp -->
+  <a class="whatsapp-float" href="https://wa.me/5519987155840" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="#" class="logo">
+          <span class="logo-bracket">&lt;</span>
+          <span class="logo-name">Emerson Campos</span>
+          <span class="logo-bracket">/&gt;</span>
+        </a>
+        
+        <div class="header-right">
+          <nav class="nav">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#sobre" class="nav-link">Sobre</a>
+            <a href="#projetos" class="nav-link">Projetos</a>
+            <a href="#habilidades" class="nav-link">Skills</a>
+            <a href="#contato" class="nav-link">Contato</a>
+          </nav>
+          
+          <button class="menu-mobile-btn" id="menuMobileBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+      </div>
+      
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-tag">
+              <span class="hero-tag-dot"></span>
+              Disponível para oportunidades
+            </div>
+            
+            <h1 class="hero-title">
+              <span class="hero-title-line">Desenvolvedor</span>
+              <span class="hero-title-highlight">Front-End</span>
+            </h1>
+            
+            <p class="hero-desc">
+              Estudante de Engenharia da Computação apaixonado por criar interfaces 
+              modernas, responsivas e com excelente experiência de usuário.
+            </p>
+            
+            <div class="hero-buttons">
+              <a href="#projetos" class="btn btn-primary">
+                <span>Ver Projetos</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="#contato" class="btn btn-secondary">
+                <i class="fas fa-paper-plane"></i>
+                <span>Contato</span>
+              </a>
+              <a href="CV TI.pdf" class="btn btn-outline" download>
+                <i class="fas fa-download"></i>
+                <span>Download CV</span>
+              </a>
+            </div>
+            
+            <div class="hero-stats">
+              <div class="stat">
+                <span class="stat-number">3+</span>
+                <span class="stat-label">Projetos Completos</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">2+</span>
+                <span class="stat-label">Anos de Estudo</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Tecnologias</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="hero-code-card">
+            <div class="code-header">
+              <span class="code-dot red"></span>
+              <span class="code-dot yellow"></span>
+              <span class="code-dot green"></span>
+              <span class="code-path">portfolio.tsx</span>
+            </div>
+            <div class="code-content">
+              <pre><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {</code>
+<code>  <span class="code-property">name</span>: <span class="code-string">"Emerson Campos"</span>,</code>
+<code>  <span class="code-property">role</span>: <span class="code-string">"Front-End Developer"</span>,</code>
+<code>  <span class="code-property">skills</span>: [<span class="code-string">"HTML"</span>, <span class="code-string">"CSS"</span>, <span class="code-string">"JS"</span>],</code>
+<code>  <span class="code-property">passion</span>: <span class="code-string">"UI/UX Excellence"</span></code>
+<code>};</code>
+<code class="code-pulse"><span class="code-keyword">return</span> (</code>
+<code>  <span class="code-tag">&lt;Portfolio</span> <span class="code-prop">data</span>={<span class="code-variable">developer</span>} /&gt;</code>
+<code>);</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Sobre mim</span>
+          <h2 class="section-title">Quem sou eu?</h2>
+          <div class="section-line"></div>
+        </div>
+        
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              Olá! Meu nome é <span class="highlight">Emerson Campos</span>, sou estudante de 
+              <span class="highlight">Engenharia da Computação</span> na UNIVESP e desenvolvedor 
+              Front-End focado em criar soluções web modernas e funcionais.
+            </p>
+            <p>
+              Minha jornada na programação começou com a curiosidade de entender como os sites 
+              funcionam, e hoje me dedico a construir interfaces que unem <span class="highlight">design atraente</span>, 
+              <span class="highlight">responsividade</span> e <span class="highlight">performance</span>.
+            </p>
+            <p>
+              Busco uma oportunidade como Desenvolvedor Front-End (Estágio/Júnior) para aplicar 
+              meus conhecimentos e contribuir com projetos reais que impactem positivamente os usuários.
+            </p>
+            
+            <div class="about-info">
+              <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <strong>Localização</strong>
+                  <p>Indaiatuba - SP</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <strong>Email</strong>
+                  <p>emersonpsn07@gmail.com</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-graduation-cap"></i>
+                <div>
+                  <strong>Formação</strong>
+                  <p>Engenharia da Computação - UNIVESP</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="about-card">
+            <div class="card-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Freelance Disponível</h3>
+            <p>Disponível para projetos freelancer e oportunidades de estágio/efetivação.</p>
+            <div class="card-footer">
+              <i class="fas fa-check-circle"></i>
+              <span>Resposta rápida</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projetos Section -->
+    <section id="projetos" class="section section-dark">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Portfólio</span>
+          <h2 class="section-title">Meus Projetos</h2>
+          <div class="section-line"></div>
+          <p class="section-subtitle">Projetos reais desenvolvidos com as melhores práticas do mercado</p>
+        </div>
+        
+        <div class="projects-grid">
+          <!-- Projeto 1 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="img/hero-petlovecare.png" alt="Pet Love Care">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://emerson-o-campos.github.io/pet-love-care/" target="_blank" class="project-link">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="https://github.com/Emerson-O-Campos/pet-love-care" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>EmailJS</span>
+              </div>
+              <h3>🐾 Pet Love Care</h3>
+              <p>Sistema de agendamento para Pet Sitter com envio automático para WhatsApp, validações e cálculo de valores.</p>
+            </div>
+          </div>
+          
+          <!-- Projeto 2 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="img/home-eletubos.png" alt="Eletubos">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://emerson-o-campos.github.io/eletubos/" target="_blank" class="project-link">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="https://github.com/Emerson-O-Campos/eletubos" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+              <h3>⚡ Eletubos</h3>
+              <p>Site corporativo para indústria de eletrodutos, com layout moderno e organizado.</p>
+            </div>
+          </div>
+          
+          <!-- Projeto 3 -->
+          <div class="project-card">
+            <div class="project-image">
+              <img src="img/home-jrcdivulgacao.png" alt="JRC Divulgação">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://emerson-o-campos.github.io/jrc-divulgacao/" target="_blank" class="project-link">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="https://github.com/Emerson-O-Campos/jrc-divulgacao" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+              <h3>📢 JRC Divulgação</h3>
+              <p>Site institucional desenvolvido para cliente real, com design limpo e foco em conversão.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Habilidades Section -->
+    <section id="habilidades" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Skills</span>
+          <h2 class="section-title">Tecnologias & Ferramentas</h2>
+          <div class="section-line"></div>
+        </div>
+        
+        <div class="skills-container">
+          <div class="skill-category">
+            <h3><i class="fas fa-code"></i> Front-End</h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <div class="skill-icon">HTML5</div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 85%"></div>
+                </div>
+                <span class="skill-percent">Intermediário</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">CSS3</div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 80%"></div>
+                </div>
+                <span class="skill-percent">Intermediário</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">JavaScript</div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 70%"></div>
+                </div>
+                <span class="skill-percent">Intermediário</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3><i class="fas fa-tools"></i> Ferramentas</h3>
+            <div class="skills-chips">
+              <span><i class="fab fa-git-alt"></i> Git/GitHub</span>
+              <span><i class="fas fa-envelope"></i> EmailJS</span>
+              <span><i class="fab fa-windows"></i> Windows/Linux</span>
+              <span><i class="fas fa-mobile-alt"></i> Responsividade</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3><i class="fas fa-language"></i> Idiomas</h3>
+            <div class="skills-chips">
+              <span><i class="fas fa-flag-br"></i> Português - Nativo</span>
+              <span><i class="fas fa-flag-us"></i> Inglês - B1 (Pré-intermediário)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="section contato-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Contato</span>
+          <h2 class="section-title">Vamos Conversar?</h2>
+          <div class="section-line"></div>
+          <p class="section-subtitle">Entre em contato para oportunidades, projetos ou apenas um bate-papo</p>
+        </div>
+        
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <div class="contact-card-item">
+              <div class="contact-icon">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <div>
+                <h4>WhatsApp</h4>
+                <p>(19) 98715-5840</p>
+                <a href="https://wa.me/5519987155840" target="_blank">Enviar mensagem →</a>
+              </div>
+            </div>
+            
+            <div class="contact-card-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h4>Email</h4>
+                <p>emersonpsn07@gmail.com</p>
+                <a href="mailto:emersonpsn07@gmail.com">Enviar email →</a>
+              </div>
+            </div>
+            
+            <div class="contact-card-item">
+              <div class="contact-icon">
+                <i class="fab fa-linkedin"></i>
+              </div>
+              <div>
+                <h4>LinkedIn</h4>
+                <p>Meu perfil profissional</p>
+                <a href="https://www.linkedin.com/in/emerson-campos-4294023a6/" target="_blank">Conectar →</a>
+              </div>
+            </div>
+            
+            <div class="contact-card-item">
+              <div class="contact-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <div>
+                <h4>GitHub</h4>
+                <p>Emerson-O-Campos</p>
+                <a href="https://github.com/Emerson-O-Campos" target="_blank">Ver repositórios →</a>
+              </div>
+            </div>
+          </div>
+          
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <input type="text" placeholder="Seu nome" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Seu email" required>
+            </div>
+            <div class="form-group">
+              <textarea rows="5" placeholder="Sua mensagem" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span>Enviar mensagem</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-bracket">&lt;</span>
+          <span>Emerson Campos</span>
+          <span class="logo-bracket">/&gt;</span>
+        </div>
+        <p class="footer-copy">© <span id="year"></span> Desenvolvido com <i class="fas fa-heart"></i> por Emerson Campos</p>
+        <div class="footer-social">
+          <a href="https://github.com/Emerson-O-Campos" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/emerson-campos-4294023a6/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:emersonpsn07@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
