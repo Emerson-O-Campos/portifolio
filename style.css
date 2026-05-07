@@ -953,8 +953,9 @@ body {
 }
 
 /* ============================================
-   WHATSAPP FLOAT
+   WHATSAPP FLOAT + TOOLTIP + PULSAR
    ============================================ */
+
 .whatsapp-float {
   position: fixed;
   bottom: 30px;
@@ -968,14 +969,67 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 28px;
-  z-index: 100;
-  transition: var(--transition);
+  z-index: 999;
+  transition: 0.3s ease;
   box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+
+  text-decoration: none;
+  animation: whatsappPulse 2.8s infinite;
 }
 
+/* Hover do botão */
 .whatsapp-float:hover {
   transform: scale(1.1);
   box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  color: #fff;
+  text-decoration: none;
+  animation: none;
+}
+
+.whatsapp-float:visited,
+.whatsapp-float:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Tooltip */
+.whatsapp-tooltip {
+  position: absolute;
+  right: 70px;
+  background: rgba(20, 20, 26, 0.95);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10px);
+  transition: 0.3s ease;
+  border: 1px solid rgba(0, 255, 153, 0.2);
+}
+
+/* Tooltip aparece no hover */
+.whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* Animação pulsar suave */
+@keyframes whatsappPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+  }
+  50% {
+    transform: scale(1.07);
+    box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+  }
 }
 
 /* ============================================
@@ -1181,3 +1235,136 @@ body {
   color: var(--primary);
   transform: translateY(-2px);
 }
+
+/* ============================================
+   WHATSAPP FLOAT RESPONSIVO (MOBILE)
+   ============================================ */
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .whatsapp-tooltip {
+    right: 60px;
+    font-size: 0.78rem;
+    padding: 6px 12px;
+  }
+}
+
+/* Em telas muito pequenas, esconde tooltip */
+@media (max-width: 480px) {
+  .whatsapp-tooltip {
+    display: none;
+  }
+
+  .whatsapp-float {
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+    bottom: 18px;
+    right: 18px;
+  }
+}
+
+.hero-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.hero-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(0, 255, 153, 0.8);
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.3);
+}
+
+@media (max-width: 600px) {
+  .hero-title-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-photo {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+.hero-photo {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+
+  object-fit: cover;
+  object-position: 50% 30%; /* desce a imagem */
+
+  border: 2px solid rgba(0, 255, 153, 0.8);
+  box-shadow: 0 0 35px rgba(0, 255, 153, 0.35);
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+  animation: photoFadeIn 1.2s ease forwards;
+  opacity: 0;
+}
+
+/* Hover suave e elegante */
+.hero-photo:hover {
+  transform: scale(1.08) rotate(1deg);
+  box-shadow: 0 0 35px rgba(0, 255, 153, 0.5);
+  filter: brightness(1.05);
+}
+
+/* Animação de entrada */
+@keyframes photoFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.hero-photo {
+  animation: photoFadeIn 1.2s ease forwards, photoGlow 3s infinite ease-in-out;
+}
+
+@keyframes photoGlow {
+  0% {
+    box-shadow: 0 0 20px rgba(0, 255, 153, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(0, 255, 153, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(0, 255, 153, 0.25);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-photo {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+/* ============================================
+   HERO DESC - DESTAQUE NO DESKTOP
+   ============================================ */
+@media (min-width: 1024px) {
+  .hero-desc {
+    font-size: 1.35rem;
+    line-height: 1.9;
+    max-width: 550px;
+    color: var(--text-secondary);
+  }
+}
+
