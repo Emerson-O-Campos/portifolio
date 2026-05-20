@@ -32,6 +32,18 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Reduz animações para quem prefere */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background: var(--bg-primary);
@@ -40,31 +52,22 @@ body {
   overflow-x: hidden;
 }
 
-/* Cursor custom - apenas para desktop */
-@media (min-width: 769px) {
+/* Cursor custom - apenas para desktop e sem motion */
+@media (min-width: 769px) and (prefers-reduced-motion: no-preference) {
   body {
     cursor: none;
   }
   
-  .cursor, .cursor-follower {
-    position: fixed;
+  .cursor {
+    width: 10px;
+    height: 10px;
+    background: var(--primary);
     border-radius: 50%;
+    position: fixed;
     pointer-events: none;
     z-index: 9999;
-  }
-  
-  .cursor {
-   width: 10px;
-   height: 10px;
-   background: var(--primary);
-   border-radius: 50%;
-   position: fixed;
-   pointer-events: none;
-   z-index: 9999;
-   transform: translate(-50%, -50%);
-   box-shadow:
-     0 0 10px rgba(0,255,153,0.8),
-     0 0 20px rgba(0,255,153,0.4);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0,255,153,0.8), 0 0 20px rgba(0,255,153,0.4);
   }
 }
 
@@ -121,6 +124,12 @@ body {
   filter: blur(80px);
   opacity: 0.3;
   animation: float 20s infinite ease-in-out;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .gradient-orb {
+    animation: float 20s infinite ease-in-out;
+  }
 }
 
 .orb-1 {
@@ -292,6 +301,12 @@ body {
   background: var(--primary);
   border-radius: 50%;
   animation: pulse 2s infinite;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-tag-dot {
+    animation: pulse 2s infinite;
+  }
 }
 
 @keyframes pulse {
@@ -466,8 +481,11 @@ body {
 .code-string { color: #f1fa8c; }
 .code-tag { color: #ff79c6; }
 .code-prop { color: #8be9fd; }
-.code-pulse {
-  animation: pulse-text 2s infinite;
+
+@media (prefers-reduced-motion: no-preference) {
+  .code-pulse {
+    animation: pulse-text 2s infinite;
+  }
 }
 
 @keyframes pulse-text {
@@ -487,7 +505,12 @@ body {
   gap: 8px;
   color: var(--text-muted);
   font-size: 0.8rem;
-  animation: bounce 2s infinite;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-indicator {
+    animation: bounce 2s infinite;
+  }
 }
 
 @keyframes bounce {
@@ -635,7 +658,7 @@ body {
 }
 
 /* ============================================
-   PROJETOS - CORRIGIDO
+   PROJETOS
    ============================================ */
 .projects-grid {
   display: grid;
@@ -831,7 +854,7 @@ body {
 }
 
 /* ============================================
-   CONTATO - CORRIGIDO E MELHORADO
+   CONTATO
    ============================================ */
 .contato-section {
   background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
@@ -917,7 +940,6 @@ body {
 
 .contact-card-item a:hover {
   text-decoration: underline;
-  gap: 5px;
 }
 
 /* Formulário */
@@ -953,9 +975,8 @@ body {
 }
 
 /* ============================================
-   WHATSAPP FLOAT + TOOLTIP + PULSAR
+   WHATSAPP FLOAT
    ============================================ */
-
 .whatsapp-float {
   position: fixed;
   bottom: 30px;
@@ -972,12 +993,15 @@ body {
   z-index: 999;
   transition: 0.3s ease;
   box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
-
   text-decoration: none;
-  animation: whatsappPulse 2.8s infinite;
 }
 
-/* Hover do botão */
+@media (prefers-reduced-motion: no-preference) {
+  .whatsapp-float {
+    animation: whatsappPulse 2.8s infinite;
+  }
+}
+
 .whatsapp-float:hover {
   transform: scale(1.1);
   box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
@@ -992,7 +1016,6 @@ body {
   text-decoration: none;
 }
 
-/* Tooltip */
 .whatsapp-tooltip {
   position: absolute;
   right: 70px;
@@ -1009,14 +1032,12 @@ body {
   border: 1px solid rgba(0, 255, 153, 0.2);
 }
 
-/* Tooltip aparece no hover */
 .whatsapp-float:hover .whatsapp-tooltip {
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
 }
 
-/* Animação pulsar suave */
 @keyframes whatsappPulse {
   0% {
     transform: scale(1);
@@ -1087,6 +1108,63 @@ body {
   background: var(--primary);
   color: #000;
   transform: translateY(-3px);
+}
+
+/* ============================================
+   FOTO E TÍTULO
+   ============================================ */
+.hero-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.hero-photo {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 30%;
+  border: 2px solid rgba(0, 255, 153, 0.8);
+  box-shadow: 0 0 35px rgba(0, 255, 153, 0.35);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+  opacity: 0;
+  animation: photoFadeIn 1.2s ease forwards;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-photo {
+    animation: photoFadeIn 1.2s ease forwards, photoGlow 3s infinite ease-in-out;
+  }
+}
+
+.hero-photo:hover {
+  transform: scale(1.08) rotate(1deg);
+  box-shadow: 0 0 35px rgba(0, 255, 153, 0.5);
+  filter: brightness(1.05);
+}
+
+@keyframes photoFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes photoGlow {
+  0% {
+    box-shadow: 0 0 20px rgba(0, 255, 153, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(0, 255, 153, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(0, 255, 153, 0.25);
+  }
 }
 
 /* ============================================
@@ -1177,6 +1255,32 @@ body {
   .project-image {
     height: 200px;
   }
+
+  .whatsapp-float {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .whatsapp-tooltip {
+    right: 60px;
+    font-size: 0.78rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-photo {
+    width: 170px;
+    height: 170px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1213,51 +1317,7 @@ body {
   .project-image {
     height: 180px;
   }
-}
 
-/* Botão de idioma */
-.lang-toggle {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  padding: 8px 16px;
-  border-radius: 30px;
-  cursor: pointer;
-  color: var(--text-secondary);
-  font-weight: 500;
-  transition: var(--transition);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.lang-toggle:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-  transform: translateY(-2px);
-}
-
-/* ============================================
-   WHATSAPP FLOAT RESPONSIVO (MOBILE)
-   ============================================ */
-
-@media (max-width: 768px) {
-  .whatsapp-float {
-    width: 48px;
-    height: 48px;
-    font-size: 24px;
-    bottom: 20px;
-    right: 20px;
-  }
-
-  .whatsapp-tooltip {
-    right: 60px;
-    font-size: 0.78rem;
-    padding: 6px 12px;
-  }
-}
-
-/* Em telas muito pequenas, esconde tooltip */
-@media (max-width: 480px) {
   .whatsapp-tooltip {
     display: none;
   }
@@ -1271,94 +1331,7 @@ body {
   }
 }
 
-.hero-title-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-.hero-photo {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid rgba(0, 255, 153, 0.8);
-  box-shadow: 0 0 20px rgba(0, 255, 153, 0.3);
-}
-
-@media (max-width: 600px) {
-  .hero-title-wrapper {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hero-photo {
-    width: 75px;
-    height: 75px;
-  }
-}
-
-.hero-photo {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-
-  object-fit: cover;
-  object-position: 50% 30%; /* desce a imagem */
-
-  border: 2px solid rgba(0, 255, 153, 0.8);
-  box-shadow: 0 0 35px rgba(0, 255, 153, 0.35);
-
-  transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
-  animation: photoFadeIn 1.2s ease forwards;
-  opacity: 0;
-}
-
-/* Hover suave e elegante */
-.hero-photo:hover {
-  transform: scale(1.08) rotate(1deg);
-  box-shadow: 0 0 35px rgba(0, 255, 153, 0.5);
-  filter: brightness(1.05);
-}
-
-/* Animação de entrada */
-@keyframes photoFadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(15px) scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px) scale(1);
-  }
-}
-
-.hero-photo {
-  animation: photoFadeIn 1.2s ease forwards, photoGlow 3s infinite ease-in-out;
-}
-
-@keyframes photoGlow {
-  0% {
-    box-shadow: 0 0 20px rgba(0, 255, 153, 0.25);
-  }
-  50% {
-    box-shadow: 0 0 35px rgba(0, 255, 153, 0.45);
-  }
-  100% {
-    box-shadow: 0 0 20px rgba(0, 255, 153, 0.25);
-  }
-}
-
-@media (max-width: 600px) {
-  .hero-photo {
-    width: 170px;
-    height: 170px;
-  }
-}
-
-/* ============================================
-   HERO DESC - DESTAQUE NO DESKTOP
-   ============================================ */
+/* Desktop hero desc maior */
 @media (min-width: 1024px) {
   .hero-desc {
     font-size: 1.35rem;
@@ -1368,3 +1341,42 @@ body {
   }
 }
 
+/* ============================================
+   BOTÃO DE IDIOMA (LANG TOGGLE)
+   ============================================ */
+.lang-toggle {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-weight: 600;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.lang-toggle:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.lang-toggle i {
+  font-size: 0.9rem;
+}
+
+/* Responsivo para o toggle */
+@media (max-width: 768px) {
+  .lang-toggle {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .header-right {
+    gap: 15px;
+  }
+}
