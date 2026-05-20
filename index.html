@@ -13,24 +13,30 @@
   <meta property="og:description" content="Desenvolvedor Front-End | HTML, CSS, JavaScript" />
   <meta property="og:type" content="website" />
   
+  <!-- Pré-conexão para performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='50' text-anchor='middle' dy='.3em' font-size='60' fill='%2300ff99'%3EEC%3C/text%3E%3C/svg%3E" />
+  
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   
-  <!-- Fontes modernas -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
   <!-- Cursor custom -->
-  <div class="cursor"></div>
+  <div class="cursor" aria-hidden="true"></div>
 
   <!-- Botão WhatsApp -->
   <a href="https://wa.me/5519987155840"
      class="whatsapp-float"
      target="_blank"
+     rel="noopener noreferrer"
      aria-label="Fale comigo no WhatsApp">
 
-    <i class="fab fa-whatsapp"></i>
-
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
     <span class="whatsapp-tooltip">Fale comigo</span>
   </a>
 
@@ -38,25 +44,31 @@
   <header class="header">
     <div class="container">
       <div class="header-content">
-        <a href="#" class="logo">
+        <a href="#" class="logo" aria-label="Página inicial">
           <span class="logo-bracket">&lt;</span>
           <span class="logo-name">Emerson Campos</span>
           <span class="logo-bracket">/&gt;</span>
         </a>
         
         <div class="header-right">
-          <nav class="nav">
-            <a href="#home" class="nav-link active">Home</a>
+          <nav class="nav" aria-label="Navegação principal">
+            <a href="#home" class="nav-link">Home</a>
             <a href="#sobre" class="nav-link">Sobre</a>
             <a href="#projetos" class="nav-link">Projetos</a>
             <a href="#habilidades" class="nav-link">Skills</a>
             <a href="#contato" class="nav-link">Contato</a>
           </nav>
           
-          <button class="menu-mobile-btn" id="menuMobileBtn">
-            <span></span>
-            <span></span>
-            <span></span>
+          <!-- Botão de idioma -->
+          <button class="lang-toggle" id="langToggle" aria-label="Trocar idioma">
+            <i class="fas fa-globe"></i>
+            <span id="langToggleText">PT</span>
+          </button>
+          
+          <button class="menu-mobile-btn" id="menuMobileBtn" aria-label="Menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
           </button>
         </div>
       </div>
@@ -66,7 +78,7 @@
   <main>
     <!-- Hero Section -->
     <section id="home" class="hero">
-      <div class="hero-bg">
+      <div class="hero-bg" aria-hidden="true">
         <div class="gradient-orb orb-1"></div>
         <div class="gradient-orb orb-2"></div>
         <div class="gradient-orb orb-3"></div>
@@ -76,12 +88,16 @@
         <div class="hero-grid">
           <div class="hero-content">
             <div class="hero-tag">
-              <span class="hero-tag-dot"></span>
-              Disponível para oportunidades
+              <span class="hero-tag-dot" aria-hidden="true"></span>
+              <span>Disponível para oportunidades</span>
             </div>
             
             <div class="hero-title-wrapper">
-              <img src="img/me.jpeg" alt="Foto de Emerson Campos" class="hero-photo">
+              <img src="img/me.jpeg" 
+                   alt="Foto de Emerson Campos - Desenvolvedor Front-End" 
+                   class="hero-photo"
+                   loading="eager"
+                   onerror="this.src='https://ui-avatars.com/api/?background=00ff99&color=000&name=EC&size=260'">
             
               <h1 class="hero-title">
                 <span class="hero-title-line">Desenvolvedor</span>
@@ -90,21 +106,22 @@
             </div>
             
             <p class="hero-desc">
-              Estudante de Engenharia da Computação apaixonado por criar interfaces 
-              modernas, responsivas e com excelente experiência de usuário.
+              Estudante de Engenharia da Computação apaixonado por criar interfaces modernas. 
+              <strong>Buscando primeira oportunidade como Front-End (Estágio/Júnior)</strong> – 
+              disponível para início imediato e projetos freelancer.
             </p>
             
             <div class="hero-buttons">
               <a href="#projetos" class="btn btn-primary">
                 <span>Ver Projetos</span>
-                <i class="fas fa-arrow-right"></i>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
               </a>
               <a href="#contato" class="btn btn-secondary">
-                <i class="fas fa-paper-plane"></i>
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
                 <span>Contato</span>
               </a>
-              <a href="CV TI.pdf" class="btn btn-outline" download>
-                <i class="fas fa-download"></i>
+              <a href="CV TI.pdf" class="btn btn-outline" download aria-label="Baixar Currículo">
+                <i class="fas fa-download" aria-hidden="true"></i>
                 <span>Download CV</span>
               </a>
             </div>
@@ -127,9 +144,9 @@
           
           <div class="hero-code-card">
             <div class="code-header">
-              <span class="code-dot red"></span>
-              <span class="code-dot yellow"></span>
-              <span class="code-dot green"></span>
+              <span class="code-dot red" aria-hidden="true"></span>
+              <span class="code-dot yellow" aria-hidden="true"></span>
+              <span class="code-dot green" aria-hidden="true"></span>
               <span class="code-path">portfolio.tsx</span>
             </div>
             <div class="code-content">
@@ -147,7 +164,7 @@
         </div>
       </div>
       
-      <div class="scroll-indicator">
+      <div class="scroll-indicator" aria-hidden="true">
         <span>Scroll</span>
         <i class="fas fa-chevron-down"></i>
       </div>
@@ -181,21 +198,21 @@
             
             <div class="about-info">
               <div class="info-item">
-                <i class="fas fa-map-marker-alt"></i>
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                 <div>
                   <strong>Localização</strong>
                   <p>Indaiatuba - SP</p>
                 </div>
               </div>
               <div class="info-item">
-                <i class="fas fa-envelope"></i>
+                <i class="fas fa-envelope" aria-hidden="true"></i>
                 <div>
                   <strong>Email</strong>
                   <p>emersonpsn07@gmail.com</p>
                 </div>
               </div>
               <div class="info-item">
-                <i class="fas fa-graduation-cap"></i>
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                 <div>
                   <strong>Formação</strong>
                   <p>Engenharia da Computação - UNIVESP</p>
@@ -206,12 +223,12 @@
           
           <div class="about-card">
             <div class="card-icon">
-              <i class="fas fa-code"></i>
+              <i class="fas fa-code" aria-hidden="true"></i>
             </div>
             <h3>Freelance Disponível</h3>
             <p>Disponível para projetos freelancer e oportunidades de estágio/efetivação.</p>
             <div class="card-footer">
-              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
               <span>Resposta rápida</span>
             </div>
           </div>
@@ -233,14 +250,17 @@
           <!-- Projeto 1 -->
           <div class="project-card">
             <div class="project-image">
-              <img src="img/hero-petlovecare.png" alt="Pet Love Care">
+              <img src="img/hero-petlovecare.png" 
+                   alt="Preview do projeto Pet Love Care"
+                   loading="lazy"
+                   onerror="this.src='https://placehold.co/600x400/1a1a1e/00ff99?text=Pet+Love+Care'">
               <div class="project-overlay">
                 <div class="project-links">
-                  <a href="https://emerson-o-campos.github.io/pet-love-care/" target="_blank" class="project-link">
-                    <i class="fas fa-external-link-alt"></i>
+                  <a href="https://emerson-o-campos.github.io/pet-love-care/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver projeto">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                   </a>
-                  <a href="https://github.com/Emerson-O-Campos/pet-love-care" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i>
+                  <a href="https://github.com/Emerson-O-Campos/pet-love-care" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver código no GitHub">
+                    <i class="fab fa-github" aria-hidden="true"></i>
                   </a>
                 </div>
               </div>
@@ -260,14 +280,17 @@
           <!-- Projeto 2 -->
           <div class="project-card">
             <div class="project-image">
-              <img src="img/home-eletubos.png" alt="Eletubos">
+              <img src="img/home-eletubos.png" 
+                   alt="Preview do projeto Eletubos"
+                   loading="lazy"
+                   onerror="this.src='https://placehold.co/600x400/1a1a1e/00ff99?text=Eletubos'">
               <div class="project-overlay">
                 <div class="project-links">
-                  <a href="https://emerson-o-campos.github.io/eletubos/" target="_blank" class="project-link">
-                    <i class="fas fa-external-link-alt"></i>
+                  <a href="https://emerson-o-campos.github.io/eletubos/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver projeto">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                   </a>
-                  <a href="https://github.com/Emerson-O-Campos/eletubos" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i>
+                  <a href="https://github.com/Emerson-O-Campos/eletubos" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver código no GitHub">
+                    <i class="fab fa-github" aria-hidden="true"></i>
                   </a>
                 </div>
               </div>
@@ -286,14 +309,17 @@
           <!-- Projeto 3 -->
           <div class="project-card">
             <div class="project-image">
-              <img src="img/home-jrcdivulgacao.png" alt="JRC Divulgação">
+              <img src="img/home-jrcdivulgacao.png" 
+                   alt="Preview do projeto JRC Divulgação"
+                   loading="lazy"
+                   onerror="this.src='https://placehold.co/600x400/1a1a1e/00ff99?text=JRC+Divulgação'">
               <div class="project-overlay">
                 <div class="project-links">
-                  <a href="https://emerson-o-campos.github.io/jrc-divulgacao/" target="_blank" class="project-link">
-                    <i class="fas fa-external-link-alt"></i>
+                  <a href="https://emerson-o-campos.github.io/jrc-divulgacao/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver projeto">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                   </a>
-                  <a href="https://github.com/Emerson-O-Campos/jrc-divulgacao" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i>
+                  <a href="https://github.com/Emerson-O-Campos/jrc-divulgacao" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver código no GitHub">
+                    <i class="fab fa-github" aria-hidden="true"></i>
                   </a>
                 </div>
               </div>
@@ -316,54 +342,57 @@
     <section id="habilidades" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="section-badge">Skills</span>
-          <h2 class="section-title">Tecnologias & Ferramentas</h2>
+          <span class="section-badge" id="skillsBadge">Skills</span>
+          <h2 class="section-title" id="skillsTitle">Tecnologias & Ferramentas</h2>
           <div class="section-line"></div>
         </div>
-        
+    
         <div class="skills-container">
           <div class="skill-category">
-            <h3><i class="fas fa-code"></i> Front-End</h3>
+            <h3><i class="fas fa-code" aria-hidden="true"></i> <span id="frontendTitle">Front-End</span></h3>
             <div class="skills-grid">
               <div class="skill-item">
                 <div class="skill-icon">HTML5</div>
                 <div class="skill-bar">
                   <div class="skill-progress" style="width: 85%"></div>
                 </div>
-                <span class="skill-percent">Intermediário</span>
+                <span class="skill-percent" id="htmlLevel">Intermediário</span>
               </div>
               <div class="skill-item">
                 <div class="skill-icon">CSS3</div>
                 <div class="skill-bar">
                   <div class="skill-progress" style="width: 80%"></div>
                 </div>
-                <span class="skill-percent">Intermediário</span>
+                <span class="skill-percent" id="cssLevel">Intermediário</span>
               </div>
               <div class="skill-item">
                 <div class="skill-icon">JavaScript</div>
                 <div class="skill-bar">
                   <div class="skill-progress" style="width: 70%"></div>
                 </div>
-                <span class="skill-percent">Intermediário</span>
+                <span class="skill-percent" id="jsLevel">Intermediário</span>
               </div>
             </div>
           </div>
-          
+    
           <div class="skill-category">
-            <h3><i class="fas fa-tools"></i> Ferramentas</h3>
+            <h3><i class="fas fa-tools" aria-hidden="true"></i> <span id="toolsTitle">Ferramentas</span></h3>
             <div class="skills-chips">
-              <span><i class="fab fa-git-alt"></i> Git/GitHub</span>
-              <span><i class="fas fa-envelope"></i> EmailJS</span>
-              <span><i class="fab fa-windows"></i> Windows/Linux</span>
-              <span><i class="fas fa-mobile-alt"></i> Responsividade</span>
+              <span><i class="fab fa-git-alt" aria-hidden="true"></i> <span id="gitText">Git/GitHub</span></span>
+              <span><i class="fas fa-envelope" aria-hidden="true"></i> <span id="emailjsText">EmailJS</span></span>
+              <span><i class="fab fa-windows" aria-hidden="true"></i> <span id="windowsText">Windows/Linux</span></span>
+              <span><i class="fas fa-mobile-alt" aria-hidden="true"></i> <span
+                  id="responsividadeText">Responsividade</span></span>
             </div>
           </div>
-          
+    
           <div class="skill-category">
-            <h3><i class="fas fa-language"></i> Idiomas</h3>
+            <h3><i class="fas fa-language" aria-hidden="true"></i> <span id="languagesTitle">Idiomas</span></h3>
             <div class="skills-chips">
-              <span><i class="fas fa-flag-br"></i> Português - Nativo</span>
-              <span><i class="fas fa-flag-us"></i> Inglês - B1 (Pré-intermediário)</span>
+              <span><i class="fas fa-flag-br" aria-hidden="true"></i> <span id="portuguesText">Português -
+                  Nativo</span></span>
+              <span><i class="fas fa-flag-us" aria-hidden="true"></i> <span id="inglesText">Inglês - B1
+                  (Pré-intermediário)</span></span>
             </div>
           </div>
         </div>
@@ -384,62 +413,81 @@
           <div class="contact-info">
             <div class="contact-card-item">
               <div class="contact-icon">
-                <i class="fab fa-whatsapp"></i>
+                <i class="fab fa-whatsapp" aria-hidden="true"></i>
               </div>
               <div>
                 <h4>WhatsApp</h4>
                 <p>(19) 98715-5840</p>
-                <a href="https://wa.me/5519987155840" target="_blank">Enviar mensagem →</a>
+                <a href="https://wa.me/5519987155840" target="_blank" rel="noopener noreferrer">
+                  <span>Enviar mensagem</span> →
+                </a>
               </div>
             </div>
             
             <div class="contact-card-item">
               <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
+                <i class="fas fa-envelope" aria-hidden="true"></i>
               </div>
               <div>
                 <h4>Email</h4>
                 <p>emersonpsn07@gmail.com</p>
-                <a href="mailto:emersonpsn07@gmail.com">Enviar email →</a>
+                <a href="mailto:emersonpsn07@gmail.com">
+                  <span>Enviar email</span> →
+                </a>
               </div>
             </div>
             
             <div class="contact-card-item">
               <div class="contact-icon">
-                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
               </div>
               <div>
                 <h4>LinkedIn</h4>
                 <p>Meu perfil profissional</p>
-                <a href="https://www.linkedin.com/in/emerson-campos-4294023a6/" target="_blank">Conectar →</a>
+                <a href="https://www.linkedin.com/in/emerson-campos-4294023a6/" target="_blank" rel="noopener noreferrer">
+                  <span>Conectar</span> →
+                </a>
               </div>
             </div>
             
             <div class="contact-card-item">
               <div class="contact-icon">
-                <i class="fab fa-github"></i>
+                <i class="fab fa-github" aria-hidden="true"></i>
               </div>
               <div>
                 <h4>GitHub</h4>
                 <p>Emerson-O-Campos</p>
-                <a href="https://github.com/Emerson-O-Campos" target="_blank">Ver repositórios →</a>
+                <a href="https://github.com/Emerson-O-Campos" target="_blank" rel="noopener noreferrer">
+                  <span>Ver repositórios</span> →
+                </a>
               </div>
             </div>
           </div>
           
-          <form class="contact-form" id="contactForm">
+          <form action="https://formsubmit.co/emersonpsn07@gmail.com" method="POST" class="contact-form">
+            <!-- Configurações do FormSubmit -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="box">
+            <input type="hidden" name="_subject" value="📬 Novo contato do seu Portfólio!">
+            <input type="hidden" name="_next" value="https://emerson-o-campos.github.io/portfolio/obrigado.html">
+          
+            <input type="hidden" name="_autoresponse" value="Olá! Recebi sua mensagem e retornarei em breve. Obrigado! - Emerson Campos">
+
+            <!-- Opcional: evitar spam (comentário humano) -->
+            <input type="hidden" name="_honey" style="display:none">
+          
             <div class="form-group">
-              <input type="text" placeholder="Seu nome" required>
+              <input type="text" name="nome" placeholder="Seu nome" required aria-label="Seu nome">
             </div>
             <div class="form-group">
-              <input type="email" placeholder="Seu email" required>
+              <input type="email" name="email" placeholder="Seu email" required aria-label="Seu email">
             </div>
             <div class="form-group">
-              <textarea rows="5" placeholder="Sua mensagem" required></textarea>
+              <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required aria-label="Sua mensagem"></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-full">
               <span>Enviar mensagem</span>
-              <i class="fas fa-paper-plane"></i>
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
             </button>
           </form>
         </div>
@@ -455,11 +503,21 @@
           <span>Emerson Campos</span>
           <span class="logo-bracket">/&gt;</span>
         </div>
-        <p class="footer-copy">© <span id="year"></span> Desenvolvido com <i class="fas fa-heart"></i> por Emerson Campos</p>
+        <p class="footer-copy">© <span id="year"></span> 
+          <span>Desenvolvido com</span>
+          <i class="fas fa-heart" aria-hidden="true"></i> 
+          <span>por Emerson Campos</span>
+        </p>
         <div class="footer-social">
-          <a href="https://github.com/Emerson-O-Campos" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/emerson-campos-4294023a6/" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="mailto:emersonpsn07@gmail.com"><i class="fas fa-envelope"></i></a>
+          <a href="https://github.com/Emerson-O-Campos" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/emerson-campos-4294023a6/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:emersonpsn07@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
     </div>
