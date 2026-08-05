@@ -349,7 +349,8 @@
         projectsDesc: [
           'Sistema de agendamento para Pet Sitter com envio automático para WhatsApp, validações e cálculo de valores.',
           'Site corporativo para indústria de eletrodutos, com layout moderno e organizado.',
-          'Site institucional desenvolvido para cliente real, com design limpo e foco em conversão.'
+          'Site institucional desenvolvido para cliente real, com design limpo e foco em conversão.',
+          'Catálogo de filmes com busca em tempo real via API TMDB, design inspirado na Netflix e interface totalmente responsiva.'
         ],
         skillsBadge: 'Skills',
         skillsTitle: 'Tecnologias & Ferramentas',
@@ -395,7 +396,8 @@
         projectsDesc: [
           'Pet Sitter scheduling system with automatic WhatsApp sending, validations, and price calculation.',
           'Corporate website for conduit industry, with modern and organized layout.',
-          'Institutional website developed for a real client, with clean design and conversion focus.'
+          'Institutional website developed for a real client, with clean design and conversion focus.',
+          'Movie catalog with real-time search via TMDB API, Netflix-inspired design and fully responsive interface.'
         ],
         skillsBadge: 'Skills',
         skillsTitle: 'Technologies & Tools',
